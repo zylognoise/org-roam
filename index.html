@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Documentación Técnica de org-roam para Emacs</title>
+	<link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+	<nav id="navbar">
+            <header>Documentación de org-roam</header>
+            <a class="nav-link" href="#Introducción">Introducción</a>
+            <a class="nav-link" href="#Instalación">Instalación</a>
+            <a class="nav-link" href="#Configuración">Configuración</a>
+            <a class="nav-link" href="#Uso_básico">Uso básico</a>
+            <a class="nav-link" href="#Comandos_avanzados">Comandos avanzados</a>
+	</nav>
+
+	<main id="main-doc">
+            <section class="main-section" id="Introducción">
+		<header>Introducción</header>
+		<p>org-roam es una extensión para Emacs que permite la gestión de notas vinculadas de manera similar a Roam Research.</p>
+		<p>Este documento técnico cubre los aspectos básicos y avanzados de org-roam.</p>
+		<p>Para comenzar, es importante entender qué es org-roam y cómo puede mejorar tu flujo de trabajo en Emacs.</p>
+		<p>org-roam facilita la creación de un sistema de conocimiento interconectado utilizando org-mode.</p>
+		<p>Con org-roam, puedes vincular notas fácilmente y navegar 
+                    entre ellas.</p>
+		<header>Beneficios</header>    
+		<ul> 
+		    <li>Organización Interconectada: org-roam facilita la organización de notas de manera interconectada, permitiendo un flujo de trabajo más natural y eficiente. Las notas pueden enlazarse entre sí, lo que ayuda a mantener un sistema de conocimiento cohesivo y bien estructurado</li>
+		    <li>Creación y Navegación de Notas: Permite la creación y navegación de notas de forma rápida y sencilla. Con comandos intuitivos, los usuarios pueden crear nuevas notas, enlazarlas a otras y navegar entre ellas sin esfuerzo, mejorando la productividad.</li>
+		    <li>Gráfico Visual de Conexiones: Proporciona un gráfico visual que muestra las conexiones entre las notas. Esto ayuda a los usuarios a identificar relaciones y patrones en su información, facilitando una comprensión más profunda de sus datos.</li>
+		    <li>Herramientas Avanzadas: org-roam ofrece herramientas avanzadas como la captura de notas diarias y la gestión de alias y referencias. Estas características adicionales permiten a los usuarios mantener sus notas organizadas y accesibles, mejorando aún más su flujo de trabajo.</li>
+		    <li>Integración con org-mode: Se integra perfectamente con org-mode, aprovechando todas las características y beneficios de este potente modo de Emacs. Esto incluye el soporte para todas las funcionalidades de org-mode, como el manejo de tareas, la planificación y la estructuración de documentos, lo que convierte a org-roam en una herramienta extremadamente versátil para la gestión de conocimiento</li>
+		</ul>  
+            </section>
+
+            <section class="main-section" id="Instalación">
+		<header>Instalación</header>
+		<p>Para instalar org-roam, necesitas tener Emacs y org-mode configurados previamente.</p>
+		<p>Agrega las siguientes líneas a tu archivo de configuración de Emacs:</p>
+		<pre><code>(use-package org-roam
+  :ensure t
+  :init
+  (setq org-roam-v2-ack t)
+  :custom
+  (org-roam-directory "~/org-roam/")
+  :config
+  (org-roam-db-autosync-mode))</code></pre>
+		<p>Después de agregar las líneas anteriores, reinicia Emacs y ejecuta <code>M-x org-roam-db-build-cache</code> para construir la base de datos de org-roam.</p>
+            </section>
+
+            <section class="main-section" id="Configuración">
+		<header>Configuración</header>
+		<p>La configuración de org-roam se puede personalizar para adaptarse a tus necesidades.</p>
+		<p>Puedes cambiar el directorio donde se almacenan las notas de org-roam modificando la variable <code>org-roam-directory</code>.</p>
+		<p>Por ejemplo, para cambiar el directorio a <code>~/mis-notas/</code>, usa el siguiente código:</p>
+		<pre><code>(setq org-roam-directory "~/mis-notas/")</code></pre>
+		<p>Además, puedes configurar las plantillas de captura de org-roam para personalizar la creación de nuevas notas.</p>
+            </section>
+
+            <section class="main-section" id="Uso_básico">
+		<header>Uso básico</header>
+		<p>Para crear una nueva nota en org-roam, utiliza el comando <code>M-x org-roam-node-find</code>.</p>
+		<p>Para vincular notas, simplemente escribe <code>[[</code> y selecciona la nota a la que quieres vincular.</p>
+		<p>org-roam también permite buscar y filtrar notas utilizando el comando <code>M-x org-roam-node-find</code>.</p>
+		<p>Para ver el gráfico de notas, utiliza el comando <code>M-x org-roam-graph</code>.</p>
+		<p>El gráfico de org-roam te permite visualizar cómo están interconectadas tus notas.</p>
+            </section>
+
+            <section class="main-section" id="Comandos_avanzados">
+		<header>Comandos avanzados</header>
+		<p>org-roam ofrece varios comandos avanzados para mejorar tu experiencia.</p>
+		<p>Por ejemplo, el comando <code>M-x org-roam-dailies-capture-today</code> te permite capturar notas diarias.</p>
+		<p>El comando <code>M-x org-roam-alias-add</code> te permite agregar alias a una nota existente.</p>
+		<ul>
+                    <li>Capturar notas diarias.</li>
+                    <li>Agregar alias a notas.</li>
+                    <li>Agregar referencias a notas.</li>
+                    <li>Sincronizar la base de datos.</li>
+		</ul>
+		<p>Puedes utilizar <code>M-x org-roam-ref-add</code> para agregar referencias a una nota.</p>
+		<p>Para sincronizar automáticamente la base de datos de org-roam, asegúrate de tener activado <code>org-roam-db-autosync-mode</code>.</p>
+            </section>
+	</main>
+    </body>
+</html>
